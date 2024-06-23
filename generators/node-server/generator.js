@@ -25,22 +25,25 @@ const fieldTypes = {
   BigDecimal: 'number',
   String: 'string',
   UUID: 'string',
+  LocalDate: 'Date',
+  Instant: 'Date',
+  ZonedDateTime: 'Date',
 };
 
 const dbTypes = {
   Boolean: 'boolean',
   Integer: 'integer',
-  Long: 'long',
+  Long: 'bigint',
   Float: 'float',
   Double: 'double',
   BigDecimal: 'decimal',
   LocalDate: 'date',
-  Instant: 'timestamp',
+  Instant: 'timestamptz',
   ZonedDateTime: 'datetime',
   AnyBlob: 'blob',
   ImageBlob: 'blob',
   Blob: 'blob',
-  TextBlob: 'blob',
+  TextBlob: 'text',
   'byte[]': 'blob',
 };
 

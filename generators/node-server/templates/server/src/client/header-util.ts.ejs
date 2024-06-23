@@ -13,24 +13,27 @@ export class HeaderUtil {
   }
 
   static addEntityCreatedHeaders(res: Response, entityName, param): any {
+    const entityNameCamel = entityName[0].toLowerCase().concat(entityName.slice(1));
     res.status(201);
     const message = enableTranslation
-      ? applicationName + '.' + entityName + '.created'
+      ? applicationName + '.' + entityNameCamel + '.created'
       : 'A new ' + entityName + ' is created with identifier ' + param;
     this.createAlert(res, message, param);
   }
 
   static addEntityUpdatedHeaders(res: Response, entityName, param): any {
+    const entityNameCamel = entityName[0].toLowerCase().concat(entityName.slice(1));
     res.status(200);
     const message = enableTranslation ? applicationName + '.' + entityName +
-    '.updated' : 'A ' + entityName + ' is updated with identifier ' + param;
+    '.updated' : 'A ' + entityNameCamel + ' is updated with identifier ' + param;
     this.createAlert(res, message, param);
   }
 
   static addEntityDeletedHeaders(res: Response, entityName, param): any {
+    const entityNameCamel = entityName[0].toLowerCase().concat(entityName.slice(1));
     res.status(204);
     const message = enableTranslation ? applicationName + '.' + entityName +
-    '.deleted' : 'A ' + entityName + ' is deleted with identifier ' + param;
+    '.deleted' : 'A ' + entityNameCamel + ' is deleted with identifier ' + param;
     this.createAlert(res, message, param);
   }
 

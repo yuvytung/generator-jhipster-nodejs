@@ -8,7 +8,7 @@ import { <%= entityClass %>Service } from '../service/<%= entityFileName %>.serv
 @Module({
   imports: [TypeOrmModule.forFeature([<%= entityClass %>Repository])],
   controllers: [<%= entityClass %>Controller],
-  providers: [<%= entityClass %>Service],
+  providers: [<%= entityClass %>Service, <%= entityClass %>Repository],
   exports: [<%= entityClass %>Service],
 })
 export class <%= entityClass %>Module {}
