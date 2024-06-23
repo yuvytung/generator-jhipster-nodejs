@@ -80,7 +80,7 @@ export class <%= entityClass %>Controller {
     type: <%= dtoClass %>,
   })
   async put(@Req() req: Request, @Body() <%= entityInstance %>DTO: <%= dtoClass %>): Promise<<%= dtoClass %>>  {
-    HeaderUtil.addEntityCreatedHeaders(req.res, '<%= entityClass %>', <%= entityInstance %>DTO.id);
+    HeaderUtil.addEntityUpdatedHeaders(req.res, '<%= entityClass %>', <%= entityInstance %>DTO.id);
     return await this.<%= entityInstance %>Service.update(<%= entityInstance %>DTO, req.user?.login);
   }
 
@@ -93,7 +93,7 @@ export class <%= entityClass %>Controller {
     type: <%= dtoClass %>,
   })
   async putId(@Req() req: Request, @Body() <%= entityInstance %>DTO: <%= dtoClass %>): Promise<<%= dtoClass %>>  {
-    HeaderUtil.addEntityCreatedHeaders(req.res, '<%= entityClass %>', <%= entityInstance %>DTO.id);
+    HeaderUtil.addEntityUpdatedHeaders(req.res, '<%= entityClass %>', <%= entityInstance %>DTO.id);
     return await this.<%= entityInstance %>Service.update(<%= entityInstance %>DTO, req.user?.login);
   }
 
